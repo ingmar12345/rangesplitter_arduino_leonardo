@@ -1,6 +1,6 @@
 # rangesplitter shifting knob using arduino leonardo
 Arduino code used for custom truck shifting knob hardware with Splitter and Range buttons for Euro Truck Simulator 2 and American Truck Simulator.
-I also added code for the easy jake button, this has to be uncommented if your shifting knob has an easy jake button.
+I also added code for the easy jake button, these lines are commented by default and should be uncommented when you want to use this feature.
 
 1. Make sure you have an Arduino that can appear as a native keyboard, in my case the Arduino Leonardo (any 32u4 or SAMD based boards should work)
 
