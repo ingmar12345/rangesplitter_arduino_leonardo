@@ -24,12 +24,12 @@ I also added code for the easy jake button, this has to be uncommented if your s
 8. Truck_Simulator_V1.0.ino assumes that the splitter button is mapped to the "Z" key and the range button is mapped to the "X" key. 
    Make sure no other inputs have the same key mappings!
    
-9. Change the following lines: (search for something like "gearsel")
- \n   config_lines[363]: "mix gearsel1on `semantical.gearsel1on?0`"
- \n   config_lines[364]: "mix gearsel1off `semantical.gearsel1off?0`"
- \n   config_lines[365]: "mix gearsel1tgl `keyboard.x?0 | semantical.gearsel1tgl?0`"
- \n   config_lines[366]: "mix gearsel2on `semantical.gearsel2on?0`"
- \n   config_lines[367]: "mix gearsel2off `semantical.gearsel2off?0`"
- \n   config_lines[368]: "mix gearsel2tgl `keyboard.z?0 | semantical.gearsel2tgl?0`"
+9. Change the following lines in controls.sii: (search for something like "gearsel")
+    - config_lines[363]: "mix gearsel1on `semantical.gearsel1on?0`"
+    - config_lines[364]: "mix gearsel1off `semantical.gearsel1off?0`"
+    - config_lines[365]: "mix gearsel1tgl `keyboard.x?0 | semantical.gearsel1tgl?0`"
+    - config_lines[366]: "mix gearsel2on `semantical.gearsel2on?0`"
+    - config_lines[367]: "mix gearsel2off `semantical.gearsel2off?0`"
+    - config_lines[368]: "mix gearsel2tgl `keyboard.z?0 | semantical.gearsel2tgl?0`"
     
 10. Have fun!
