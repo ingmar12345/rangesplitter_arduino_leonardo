@@ -1,4 +1,4 @@
-# rangesplitter_arduino_leonardo
+# rangesplitter shifting knob using arduino leonardo
 Arduino code used for custom truck shifting knob hardware with Splitter and Range buttons for Euro Truck Simulator 2 and American Truck Simulator
 
 1. Make sure you have an Arduino that can appear as a native keyboard, in my case the Arduino Leonardo (any 32u4 or SAMD based boards should work)
@@ -23,4 +23,12 @@ Arduino code used for custom truck shifting knob hardware with Splitter and Rang
 8. Truck_Simulator_V1.0.ino assumes that the splitter button is mapped to the "Z" key and the range button is mapped to the "X" key. 
    Make sure no other inputs have the same key mappings!
    
-9. 
+9. Change the following lines: (search for something like "gearsel")
+    config_lines[363]: "mix gearsel1on `semantical.gearsel1on?0`"
+    config_lines[364]: "mix gearsel1off `semantical.gearsel1off?0`"
+    config_lines[365]: "mix gearsel1tgl `keyboard.x?0 | semantical.gearsel1tgl?0`"
+    config_lines[366]: "mix gearsel2on `semantical.gearsel2on?0`"
+    config_lines[367]: "mix gearsel2off `semantical.gearsel2off?0`"
+    config_lines[368]: "mix gearsel2tgl `keyboard.z?0 | semantical.gearsel2tgl?0`"
+    
+10. Have fun!
