@@ -30,7 +30,7 @@ void loop() {
   rangeState = digitalRead(rangePin);
   splitterState = digitalRead(splitterPin);
 
-  // splitter switch (keyboard F13)
+  // splitter switch
   if((splitterState == HIGH) && (splitterFlag == LOW))
   {
     //Keyboard.println("Splitter switch is HIGH"); // do not uncomment while playing ETS2 and ATS, only for testing purposes
@@ -48,7 +48,7 @@ void loop() {
     delay(100);
   }
 
-  // range switch (keyboard F14)
+  // range switch
   if((rangeState == HIGH) && (rangeFlag == LOW))
   { 
     //Keyboard.println("Range switch is HIGH");
