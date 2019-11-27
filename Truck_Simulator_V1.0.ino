@@ -6,10 +6,14 @@
 
 const int rangePin = 4; // or whatever pin you like
 const int splitterPin = 5;
+// const int easyjakePin = 6; // my knob does not have an easy jake button, uncomment if you do have one
+
 int rangeFlag = LOW;
 int splitterFlag = LOW;
 int rangeState = LOW;
 int splitterState = LOW;
+// int easyjakeFlag = LOW;
+// int easyjakeState = LOW;
 
 void setup() {
   pinMode(rangePin, INPUT_PULLUP);
@@ -20,6 +24,11 @@ void setup() {
     
   if(digitalRead(splitterPin) == LOW) splitterFlag = LOW;
     else splitterFlag = LOW;
+  
+  /*
+  if(digitalRead(easyjakePin) == LOW) easyjakeFlag = LOW;
+    else easyjakeFlag = LOW;
+  */
   
   // initialize control over the keyboard:
   Keyboard.begin();
@@ -35,7 +44,6 @@ void loop() {
   {
     //Keyboard.println("Splitter switch is HIGH"); // do not uncomment while playing ETS2 and ATS, only for testing purposes
     Keyboard.print("Z");
-    //Keyboard.write(0x68); // F13, ETS2 and ATS currently don't support function keys that do not appear on the keyboard (F13 to F14)
     splitterFlag = HIGH;
     delay(100);
   }
@@ -43,7 +51,6 @@ void loop() {
   {
     //Keyboard.println("Splitter switch is LOW");
     Keyboard.print("Z");
-    //Keyboard.write(0x68); // F13
     splitterFlag = LOW;
     delay(100);
   }
@@ -53,7 +60,6 @@ void loop() {
   { 
     //Keyboard.println("Range switch is HIGH");
     Keyboard.print("X");
-    //Keyboard.write(0x69); // F14
     rangeFlag = HIGH;
     delay(100);
   }
@@ -61,8 +67,25 @@ void loop() {
   {
     //Keyboard.println("Range switch is LOW");
     Keyboard.print("X");
-    //Keyboard.write(0x69); // F14
     rangeFlag = LOW;
     delay(100);
   }
+  
+  // easyjake switch
+  /*
+  if((easyjakeState == HIGH) && (easyjakeFlag == LOW))
+  { 
+    //Keyboard.println("easyjake switch is HIGH");
+    Keyboard.print("V");
+    easyjakeFlag = HIGH;
+    delay(100);
+  }
+  if((easyjakeState == LOW) && (easyjakeFlag == HIGH))
+  {
+    //Keyboard.println("easyjake switch is LOW");
+    Keyboard.print("V");
+    easyjakeFlag = LOW;
+    delay(100);
+  }
+  */
 }
